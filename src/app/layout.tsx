@@ -14,7 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://vansh-kumar-portfolio.vercel.app"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://vansh-kumar-portfolio.vercel.app",
+  ),
   title: "Vansh Kumar | AI Engineer & ML Builder",
   description:
     "Portfolio of Vansh Kumar — AI Engineer, Machine Learning enthusiast, and builder of production-grade intelligent systems. B.Tech @ DTU.",

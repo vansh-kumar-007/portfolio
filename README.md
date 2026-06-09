@@ -25,12 +25,16 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Live Site
+
+**Production:** [https://vansh-kumar-portfolio.vercel.app](https://vansh-kumar-portfolio.vercel.app)
+
 ## Deploy Free on Vercel
 
-1. Push this repo to GitHub
+1. Push this repo to GitHub (create `portfolio` repo first)
 2. Go to [vercel.com](https://vercel.com) → Import repository
 3. Deploy (no environment variables required for basic setup)
-4. Your site will be live at `your-project.vercel.app`
+4. Set `NEXT_PUBLIC_SITE_URL` to your Vercel URL for correct OG images
 
 Optional: Set `FORMSPREE_ID` in Vercel environment variables for Formspree instead of FormSubmit.
 
