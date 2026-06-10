@@ -6,6 +6,7 @@ import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { CustomCursor } from "@/components/layout/CustomCursor";
 import { LoadingScreen } from "@/components/layout/LoadingScreen";
 import { CommandPalette } from "@/components/layout/CommandPalette";
+import { TerminalMode } from "@/components/layout/TerminalMode";
 import { PortfolioAssistant } from "@/components/chat/PortfolioAssistant";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
@@ -44,6 +45,7 @@ export function PortfolioPage() {
       <Footer />
       <CommandPalette />
       <PortfolioAssistant />
+      <TerminalMode />
     </>
   );
 }
