@@ -17,6 +17,7 @@ import { Timeline } from "@/components/sections/Timeline";
 import { Stats } from "@/components/sections/Stats";
 import { GitHubSection } from "@/components/sections/GitHubSection";
 import { Recruiter } from "@/components/sections/Recruiter";
+import { VisitorMap } from "@/components/sections/VisitorMap";
 import { Contact } from "@/components/sections/Contact";
 
 export function PortfolioPage() {
@@ -37,6 +38,7 @@ export function PortfolioPage() {
         <Timeline />
         <GitHubSection />
         <Recruiter />
+        <VisitorMap />
         <Contact />
       </main>
       <Footer />
