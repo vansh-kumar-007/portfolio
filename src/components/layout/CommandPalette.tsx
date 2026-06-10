@@ -22,6 +22,7 @@ import { AdminPanel } from "./AdminPanel";
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
+  const [search, setSearch] = useState("");
   const { setTheme, theme } = useTheme();
 
   const toggle = useCallback(() => setOpen((o) => !o), []);
@@ -63,10 +64,14 @@ export function CommandPalette() {
                 <Command.Input
                   placeholder="Search sections, projects, actions..."
                   className="flex-1 bg-transparent py-4 text-sm outline-none placeholder:text-muted-foreground"
-                  onValueChange={(val) => {
-                    if (val.toLowerCase() === "admin") {
+                  value={search}
+                  onValueChange={setSearch}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && e.shiftKey && search.trim().toLowerCase() === "admin") {
+                      e.preventDefault();
                       setShowAdmin(true);
                       setOpen(false);
+                      setSearch("");
                     }
                   }}
                 />

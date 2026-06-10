@@ -34,19 +34,19 @@ export function PortfolioPage() {
       <CustomCursor />
       <Navbar />
       <motion.main layout className="flex flex-col">
-        <motion.div layout><Hero /></motion.div>
-        {isRecruiterMode && <motion.div layout><Recruiter /></motion.div>}
-        <motion.div layout><About /></motion.div>
-        <motion.div layout><Stats /></motion.div>
-        <motion.div layout><Skills /></motion.div>
-        <motion.div layout><LiveHealth /></motion.div>
-        <motion.div layout><Projects /></motion.div>
-        <motion.div layout><AILab /></motion.div>
-        <motion.div layout><Timeline /></motion.div>
-        <motion.div layout><GitHubSection /></motion.div>
-        {!isRecruiterMode && <motion.div layout><Recruiter /></motion.div>}
-        <motion.div layout><VisitorMap /></motion.div>
-        <motion.div layout><Contact /></motion.div>
+        <motion.div layout key="hero"><Hero /></motion.div>
+        {isRecruiterMode && <motion.div layout key="recruiter-top"><Recruiter /></motion.div>}
+        <motion.div layout key="about"><About /></motion.div>
+        <motion.div layout key="stats"><Stats /></motion.div>
+        <motion.div layout key="skills"><Skills /></motion.div>
+        <motion.div layout key="live-health"><LiveHealth /></motion.div>
+        <motion.div layout key="projects"><Projects /></motion.div>
+        <motion.div layout key="ai-lab"><AILab /></motion.div>
+        <motion.div layout key="timeline"><Timeline /></motion.div>
+        <motion.div layout key="github"><GitHubSection /></motion.div>
+        {!isRecruiterMode && <motion.div layout key="recruiter-bottom"><Recruiter /></motion.div>}
+        <motion.div layout key="visitor-map"><VisitorMap /></motion.div>
+        <motion.div layout key="contact"><Contact /></motion.div>
       </motion.main>
       <Footer />
       <CommandPalette />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Lock, Save } from "lucide-react";
 import { useRecruiterMode } from "@/components/context/RecruiterModeContext";
@@ -19,6 +19,15 @@ export function AdminPanel({ isOpen, onClose }: AdminPanelProps) {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [tempRole, setTempRole] = useState(targetRole);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setIsAuthenticated(false);
+      setPassword("");
+      setError("");
+      setTempRole(targetRole);
+    }
+  }, [isOpen, targetRole]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
