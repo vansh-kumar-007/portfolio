@@ -9,6 +9,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TiltCard } from "@/components/reactbits/TiltCard";
 import { SpotlightCard } from "@/components/reactbits/SpotlightCard";
 import { Button } from "@/components/ui/Button";
+import { PlacementChart } from "@/components/ui/PlacementChart";
 import type { Project } from "@/data/projects";
 
 export function Projects() {
@@ -204,6 +205,12 @@ export function Projects() {
                       className="w-full h-[500px] bg-black" 
                       title="CyberArena Interactive Demo"
                     />
+                  </div>
+                )}
+
+                {selected.id === "college-analytics" && (
+                  <div className="mt-8 overflow-hidden rounded-xl border border-cyan-500/30 shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+                    <PlacementChart />
                   </div>
                 )}
 
