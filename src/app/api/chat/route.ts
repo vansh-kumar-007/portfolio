@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 import { profile, achievements } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { skillCategories } from "@/data/skills";
@@ -39,6 +39,25 @@ Guidelines:
 4. Try to naturally weave in reasons why Vansh would be a great hire when appropriate.
 `;
 
+const safetySettings = [
+  {
+    category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+];
+
 export async function POST(req: Request) {
   try {
     const { history, message } = await req.json();
@@ -49,7 +68,8 @@ export async function POST(req: Request) {
 
     const model = genAI.getGenerativeModel({ 
       model: "gemini-2.5-flash",
-      systemInstruction: systemInstruction 
+      systemInstruction: systemInstruction,
+      safetySettings: safetySettings,
     });
 
     let formattedHistory = history.map((msg: any) => ({
