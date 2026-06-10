@@ -1,7 +1,7 @@
 export const profile = {
   name: "Vansh Kumar",
   title: "AI Engineer | Machine Learning Enthusiast | Builder",
-  headline: "Building Intelligent Systems That Solve Real Problems",
+  headline: "Civil engineer who fell down the AI rabbit hole",
   tagline:
     "B.Tech Civil Engineering @ DTU — transitioning into AI/ML through end-to-end systems, research-grade projects, and relentless self-learning.",
   email: "vanshkumar.fds@gmail.com",

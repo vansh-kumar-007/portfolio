@@ -11,13 +11,15 @@ export async function POST(request: Request) {
     const formspreeId = process.env.FORMSPREE_ID;
     const endpoint = formspreeId
       ? `https://formspree.io/f/${formspreeId}`
-      : "https://formsubmit.co/ajax/vanshkumar.fds@gmail.com";
+      : "https://formsubmit.co/vanshkumar.fds@gmail.com";
 
     const res = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        "User-Agent": request.headers.get("user-agent") || "Next.js API",
+        Referer: request.headers.get("referer") || "https://portfolio.local",
       },
       body: JSON.stringify({
         name,

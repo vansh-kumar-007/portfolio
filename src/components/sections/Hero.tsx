@@ -82,8 +82,9 @@ export function Hero() {
               <p>GitHub Repos</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-foreground">
+              <p className="text-2xl font-bold text-foreground flex items-baseline gap-2">
                 <ShinyText text="Top 100" />
+                <span className="text-sm font-medium text-muted-foreground">/ 4,000+</span>
               </p>
               <p>GrabHack</p>
             </div>
