@@ -10,9 +10,11 @@ import { TiltCard } from "@/components/reactbits/TiltCard";
 import { SpotlightCard } from "@/components/reactbits/SpotlightCard";
 import { Button } from "@/components/ui/Button";
 import { PlacementChart } from "@/components/ui/PlacementChart";
+import { useRecruiterMode } from "@/components/context/RecruiterModeContext";
 import type { Project } from "@/data/projects";
 
 export function Projects() {
+  const { isRecruiterMode } = useRecruiterMode();
   const [selected, setSelected] = useState<Project | null>(null);
   const [imgIndex, setImgIndex] = useState(0);
 
@@ -42,9 +44,10 @@ export function Projects() {
               <TiltCard>
                 <SpotlightCard
                   className="cursor-pointer"
-                  onClick={() => openProject(project)}
+                  onClick={() => !isRecruiterMode && openProject(project)}
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  {!isRecruiterMode && (
+                    <div className="relative h-48 overflow-hidden">
                     <Image
                       src={project.thumbnail}
                       alt={project.title}
@@ -57,12 +60,14 @@ export function Projects() {
                       {project.category}
                     </span>
                   </div>
+                  )}
                   <div className="p-6">
                     <h3 className="text-xl font-bold">{project.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
                       {project.subtitle}
                     </p>
-                    <div className="mt-4 flex flex-wrap gap-2">
+                    {!isRecruiterMode && (
+                      <div className="mt-4 flex flex-wrap gap-2">
                       {project.techStack.slice(0, 4).map((t) => (
                         <span
                           key={t}
@@ -72,6 +77,7 @@ export function Projects() {
                         </span>
                       ))}
                     </div>
+                    )}
                     <div className="mt-4 grid grid-cols-2 gap-2">
                       {project.metrics.slice(0, 2).map((m) => (
                         <div key={m.label} className="rounded-lg bg-white/5 p-2 text-center">

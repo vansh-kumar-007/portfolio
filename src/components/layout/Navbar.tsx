@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Briefcase } from "lucide-react";
 import { profile } from "@/data/profile";
 import { ThemeToggle } from "./ThemeToggle";
+import { useRecruiterMode } from "@/components/context/RecruiterModeContext";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -21,6 +22,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { isRecruiterMode, toggleRecruiterMode } = useRecruiterMode();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -56,6 +58,19 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
+          <button
+            onClick={toggleRecruiterMode}
+            className={cn(
+              "flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium transition-all duration-300",
+              isRecruiterMode 
+                ? "bg-violet-500/20 text-violet-400 border border-violet-500/30 shadow-[0_0_15px_rgba(139,92,246,0.15)]"
+                : "bg-white/5 text-muted-foreground border border-white/10 hover:bg-white/10"
+            )}
+            title="Toggle Recruiter Mode"
+          >
+            <Briefcase className="h-4 w-4" />
+            <span className="hidden sm:inline">{isRecruiterMode ? "Recruiter Mode" : "Dev Mode"}</span>
+          </button>
           <ThemeToggle />
           <a
             href={profile.resumePath}

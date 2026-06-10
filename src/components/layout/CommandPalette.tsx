@@ -17,9 +17,11 @@ import {
 } from "lucide-react";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
+import { AdminPanel } from "./AdminPanel";
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
+  const [showAdmin, setShowAdmin] = useState(false);
   const { setTheme, theme } = useTheme();
 
   const toggle = useCallback(() => setOpen((o) => !o), []);
@@ -61,6 +63,12 @@ export function CommandPalette() {
                 <Command.Input
                   placeholder="Search sections, projects, actions..."
                   className="flex-1 bg-transparent py-4 text-sm outline-none placeholder:text-muted-foreground"
+                  onValueChange={(val) => {
+                    if (val.toLowerCase() === "admin") {
+                      setShowAdmin(true);
+                      setOpen(false);
+                    }
+                  }}
                 />
               </div>
               <Command.List className="max-h-80 overflow-y-auto p-2">
@@ -139,6 +147,7 @@ export function CommandPalette() {
           </div>
         </div>
       )}
+      <AdminPanel isOpen={showAdmin} onClose={() => setShowAdmin(false)} />
     </>
   );
 }

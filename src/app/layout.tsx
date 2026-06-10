@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
+import { RecruiterModeProvider } from "@/components/context/RecruiterModeContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -53,7 +54,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} h-full`}>
       <body suppressHydrationWarning className="min-h-full flex flex-col antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
+        <RecruiterModeProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </RecruiterModeProvider>
       </body>
     </html>
   );

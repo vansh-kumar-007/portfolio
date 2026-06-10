@@ -21,27 +21,33 @@ import { Recruiter } from "@/components/sections/Recruiter";
 import { VisitorMap } from "@/components/sections/VisitorMap";
 import { Contact } from "@/components/sections/Contact";
 
+import { motion } from "framer-motion";
+import { useRecruiterMode } from "@/components/context/RecruiterModeContext";
+
 export function PortfolioPage() {
+  const { isRecruiterMode } = useRecruiterMode();
+
   return (
     <>
       <LoadingScreen />
       <ScrollProgress />
       <CustomCursor />
       <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Stats />
-        <Skills />
-        <LiveHealth />
-        <Projects />
-        <AILab />
-        <Timeline />
-        <GitHubSection />
-        <Recruiter />
-        <VisitorMap />
-        <Contact />
-      </main>
+      <motion.main layout className="flex flex-col">
+        <motion.div layout><Hero /></motion.div>
+        {isRecruiterMode && <motion.div layout><Recruiter /></motion.div>}
+        <motion.div layout><About /></motion.div>
+        <motion.div layout><Stats /></motion.div>
+        <motion.div layout><Skills /></motion.div>
+        <motion.div layout><LiveHealth /></motion.div>
+        <motion.div layout><Projects /></motion.div>
+        <motion.div layout><AILab /></motion.div>
+        <motion.div layout><Timeline /></motion.div>
+        <motion.div layout><GitHubSection /></motion.div>
+        {!isRecruiterMode && <motion.div layout><Recruiter /></motion.div>}
+        <motion.div layout><VisitorMap /></motion.div>
+        <motion.div layout><Contact /></motion.div>
+      </motion.main>
       <Footer />
       <CommandPalette />
       <PortfolioAssistant />
