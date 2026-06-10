@@ -88,7 +88,7 @@ export function GitHubSection() {
               <button
                 onClick={() => fetchGitHub(true)}
                 disabled={refreshing}
-                className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-emerald-500/30 hover:text-foreground disabled:opacity-50"
+                className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-violet-500/30 hover:text-foreground disabled:opacity-50"
               >
                 <RefreshCw className={cn("h-3.5 w-3.5", refreshing && "animate-spin")} />
                 Refresh
@@ -103,7 +103,7 @@ export function GitHubSection() {
                 { label: "Following", value: data.following },
               ].map((s) => (
                 <SpotlightCard key={s.label} className="p-6 text-center">
-                  <p className="text-3xl font-bold text-emerald-300">{s.value}</p>
+                  <p className="text-3xl font-bold text-violet-300">{s.value}</p>
                   <p className="text-sm text-muted-foreground">{s.label}</p>
                 </SpotlightCard>
               ))}
@@ -121,10 +121,10 @@ export function GitHubSection() {
                       href={repo.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-start justify-between rounded-lg border border-white/5 p-4 transition-colors hover:border-emerald-500/30 hover:bg-white/[0.02]"
+                      className="group flex items-start justify-between rounded-lg border border-white/5 p-4 transition-colors hover:border-violet-500/30 hover:bg-white/[0.02]"
                     >
                       <div>
-                        <p className="font-medium group-hover:text-emerald-300 transition-colors">
+                        <p className="font-medium group-hover:text-violet-300 transition-colors">
                           {repo.name}
                         </p>
                         <p className="mt-1 text-xs text-muted-foreground line-clamp-1">
@@ -178,7 +178,7 @@ export function GitHubSection() {
                   href={profile.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300"
+                  className="mt-6 inline-flex items-center gap-2 text-sm text-violet-400 hover:text-violet-300"
                 >
                   View full profile <ExternalLink className="h-4 w-4" />
                 </a>

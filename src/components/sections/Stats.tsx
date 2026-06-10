@@ -37,13 +37,13 @@ export function Stats() {
                 transition={{ delay: i * 0.08 }}
               >
                 <SpotlightCard className="p-8 text-center">
-                  <p className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                  <p className="text-4xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
                     <CountUp end={value} suffix={stat.suffix} />
                   </p>
                   <p className="mt-2 text-sm text-muted-foreground">
                     {stat.label}
                     {stat.label === "GitHub Repositories" && liveRepos !== null && (
-                      <span className="ml-1 text-emerald-400">· live</span>
+                      <span className="ml-1 text-violet-400">· live</span>
                     )}
                   </p>
                 </SpotlightCard>

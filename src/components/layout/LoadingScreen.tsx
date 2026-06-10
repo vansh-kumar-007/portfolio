@@ -20,7 +20,7 @@ export function LoadingScreen() {
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="h-12 w-12 rounded-full border-2 border-emerald-500/30 border-t-emerald-500"
+            className="h-12 w-12 rounded-full border-2 border-violet-500/30 border-t-violet-500"
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />

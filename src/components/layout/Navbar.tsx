@@ -37,7 +37,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#" className="text-lg font-bold tracking-tight">
-          <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
             VK
           </span>
           <span className="ml-1 text-muted-foreground">.</span>
@@ -60,7 +60,7 @@ export function Navbar() {
           <a
             href={profile.resumePath}
             download
-            className="hidden rounded-full bg-gradient-to-r from-emerald-600 to-cyan-600 px-4 py-2 text-sm font-medium text-white sm:inline-block"
+            className="hidden rounded-full bg-gradient-to-r from-violet-600 to-cyan-600 px-4 py-2 text-sm font-medium text-white sm:inline-block"
           >
             Resume
           </a>

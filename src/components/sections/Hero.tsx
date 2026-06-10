@@ -23,7 +23,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-sm text-emerald-300"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-sm text-violet-300"
           >
             <Sparkles className="h-4 w-4" />
             Open to AI/ML Engineering Opportunities
@@ -96,7 +96,7 @@ export function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-emerald-600/30 to-cyan-600/30 blur-3xl" />
+          <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-violet-600/30 to-cyan-600/30 blur-3xl" />
           <div className="relative h-72 w-72 overflow-hidden rounded-3xl border border-white/10 sm:h-80 sm:w-80 lg:h-96 lg:w-96">
             <Image
               src={profile.photoPath}

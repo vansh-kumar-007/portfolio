@@ -38,7 +38,7 @@ export function PortfolioAssistant() {
       <motion.button
         onClick={() => setOpen(true)}
         className={cn(
-          "fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-white shadow-lg shadow-emerald-500/30 transition-transform hover:scale-105",
+          "fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-cyan-600 text-white shadow-lg shadow-violet-500/30 transition-transform hover:scale-105",
           open && "hidden",
         )}
         whileHover={{ scale: 1.05 }}
@@ -56,9 +56,9 @@ export function PortfolioAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
           >
-            <div className="flex items-center justify-between border-b border-white/10 bg-emerald-500/10 px-4 py-3">
+            <div className="flex items-center justify-between border-b border-white/10 bg-violet-500/10 px-4 py-3">
               <div className="flex items-center gap-2">
-                <Bot className="h-5 w-5 text-emerald-400" />
+                <Bot className="h-5 w-5 text-violet-400" />
                 <div>
                   <p className="text-sm font-semibold">Portfolio AI</p>
                   <p className="text-xs text-muted-foreground">Ask about Vansh</p>
@@ -76,7 +76,7 @@ export function PortfolioAssistant() {
                   className={cn(
                     "max-w-[85%] rounded-2xl px-4 py-2.5 text-sm",
                     msg.role === "user"
-                      ? "ml-auto bg-emerald-600 text-white"
+                      ? "ml-auto bg-violet-600 text-white"
                       : "bg-white/5 text-muted-foreground whitespace-pre-line",
                   )}
                 >
@@ -92,7 +92,7 @@ export function PortfolioAssistant() {
                   <button
                     key={s}
                     onClick={() => send(s)}
-                    className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted-foreground hover:border-emerald-500/30 hover:text-foreground"
+                    className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted-foreground hover:border-violet-500/30 hover:text-foreground"
                   >
                     {s}
                   </button>
@@ -111,11 +111,11 @@ export function PortfolioAssistant() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask anything..."
-                className="flex-1 rounded-xl bg-white/5 px-4 py-2 text-sm outline-none focus:ring-1 focus:ring-emerald-500/50"
+                className="flex-1 rounded-xl bg-white/5 px-4 py-2 text-sm outline-none focus:ring-1 focus:ring-violet-500/50"
               />
               <button
                 type="submit"
-                className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-600 text-white"
                 aria-label="Send message"
               >
                 <Send className="h-4 w-4" />

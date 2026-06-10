@@ -18,7 +18,7 @@ const iconMap = {
 export function Recruiter() {
   return (
     <section id="hire" className="relative py-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-violet-500/5 via-transparent to-transparent" />
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeading
           label="For Recruiters"
@@ -38,8 +38,8 @@ export function Recruiter() {
                 transition={{ delay: i * 0.08 }}
               >
                 <SpotlightCard className="h-full p-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20">
-                    <Icon className="h-6 w-6 text-emerald-400" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500/20 to-cyan-500/20">
+                    <Icon className="h-6 w-6 text-violet-400" />
                   </div>
                   <h3 className="mt-4 font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -63,7 +63,7 @@ export function Recruiter() {
                 transition={{ delay: i * 0.08 }}
                 className="flex items-start gap-3"
               >
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-violet-400" />
                 <span className="text-sm text-muted-foreground">{reason}</span>
               </motion.div>
             ))}

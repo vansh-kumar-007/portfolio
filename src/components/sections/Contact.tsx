@@ -61,7 +61,7 @@ export function Contact() {
                   required
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition-colors focus:border-emerald-500/50"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition-colors focus:border-violet-500/50"
                   placeholder="Your name"
                 />
               </div>
@@ -75,7 +75,7 @@ export function Contact() {
                   required
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition-colors focus:border-emerald-500/50"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition-colors focus:border-violet-500/50"
                   placeholder="you@company.com"
                 />
               </div>
@@ -89,7 +89,7 @@ export function Contact() {
                   rows={5}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition-colors focus:border-emerald-500/50"
+                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition-colors focus:border-violet-500/50"
                   placeholder="Tell me about the opportunity..."
                 />
               </div>
@@ -98,7 +98,7 @@ export function Contact() {
                 {status === "loading" ? "Sending..." : "Send Message"}
               </Button>
               {status === "success" && (
-                <p className="text-center text-sm text-emerald-400">
+                <p className="text-center text-sm text-violet-400">
                   Message sent! I&apos;ll get back to you soon.
                 </p>
               )}
@@ -120,9 +120,9 @@ export function Contact() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 rounded-xl border border-white/5 p-4 transition-colors hover:border-emerald-500/30 hover:bg-white/[0.02]"
+                    className="flex items-center gap-3 rounded-xl border border-white/5 p-4 transition-colors hover:border-violet-500/30 hover:bg-white/[0.02]"
                   >
-                    <link.icon className="h-5 w-5 text-emerald-400" />
+                    <link.icon className="h-5 w-5 text-violet-400" />
                     <span className="text-sm">{link.label}</span>
                   </a>
                 ))}
@@ -152,15 +152,15 @@ export function Contact() {
             <SpotlightCard className="p-8">
               <h3 className="text-xl font-bold">Also Find Me On</h3>
               <div className="mt-4 flex flex-wrap gap-3 text-sm">
-                <a href={profile.links.leetcode} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+                <a href={profile.links.leetcode} target="_blank" rel="noopener noreferrer" className="text-violet-400 hover:underline">
                   LeetCode
                 </a>
                 <span className="text-muted-foreground">·</span>
-                <a href={profile.links.kaggle} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+                <a href={profile.links.kaggle} target="_blank" rel="noopener noreferrer" className="text-violet-400 hover:underline">
                   Kaggle
                 </a>
                 <span className="text-muted-foreground">·</span>
-                <a href={profile.links.medium} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+                <a href={profile.links.medium} target="_blank" rel="noopener noreferrer" className="text-violet-400 hover:underline">
                   Medium
                 </a>
               </div>

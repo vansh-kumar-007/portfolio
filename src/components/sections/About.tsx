@@ -65,12 +65,12 @@ export function About() {
             {journeySteps.map((step, i) => (
               <SpotlightCard key={step.title} className="p-6">
                 <div className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-violet-500/20 text-violet-400">
                     <step.icon className="h-6 w-6" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-medium text-emerald-400">{step.year}</span>
+                      <span className="text-xs font-medium text-violet-400">{step.year}</span>
                       <h3 className="font-semibold">{step.title}</h3>
                     </div>
                     <p className="mt-2 text-sm text-muted-foreground">{step.description}</p>

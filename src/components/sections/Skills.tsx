@@ -37,7 +37,7 @@ export function Skills() {
 
   return (
     <section id="skills" className="relative py-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-violet-500/5 via-transparent to-transparent" />
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeading
           label="Skills"
@@ -56,7 +56,7 @@ export function Skills() {
                   className={cn(
                     "flex items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm transition-all",
                     active === i
-                      ? "border-emerald-500/50 bg-emerald-500/10 text-foreground"
+                      ? "border-violet-500/50 bg-violet-500/10 text-foreground"
                       : "border-white/5 bg-white/[0.02] text-muted-foreground hover:border-white/10",
                   )}
                 >
@@ -78,8 +78,8 @@ export function Skills() {
               >
                 <SpotlightCard className="p-8">
                   <div className="mb-8 flex items-center gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/30 to-cyan-500/30">
-                      <Icon className="h-7 w-7 text-emerald-300" />
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500/30 to-cyan-500/30">
+                      <Icon className="h-7 w-7 text-violet-300" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold">{category.name}</h3>
@@ -91,11 +91,11 @@ export function Skills() {
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     {category.skills.map((skill) => (
-                      <div key={skill.name} className="group flex items-center justify-between rounded-lg border border-white/5 bg-white/[0.02] p-3 transition-colors hover:border-emerald-500/30 hover:bg-emerald-500/10">
-                        <span className="font-medium transition-colors group-hover:text-emerald-300">
+                      <div key={skill.name} className="group flex items-center justify-between rounded-lg border border-white/5 bg-white/[0.02] p-3 transition-colors hover:border-violet-500/30 hover:bg-violet-500/10">
+                        <span className="font-medium transition-colors group-hover:text-violet-300">
                           {skill.name}
                         </span>
-                        <span className="text-xs font-medium text-muted-foreground group-hover:text-emerald-400">
+                        <span className="text-xs font-medium text-muted-foreground group-hover:text-violet-400">
                           {skill.level}
                         </span>
                       </div>
