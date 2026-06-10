@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const statusColors = {
   exploring: "bg-amber-500/20 text-amber-400 border-amber-500/30",
   active: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-  completed: "bg-violet-500/20 text-violet-400 border-violet-500/30",
+  completed: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
 };
 
 export function AILab() {
@@ -62,7 +62,7 @@ export function AILab() {
 
           <SpotlightCard className="p-8">
             <div className="flex items-center gap-3">
-              <Compass className="h-6 w-6 text-violet-400" />
+              <Compass className="h-6 w-6 text-emerald-400" />
               <h3 className="text-xl font-bold">Currently Exploring</h3>
             </div>
             <ul className="mt-6 space-y-4">
@@ -75,7 +75,7 @@ export function AILab() {
                   transition={{ delay: i * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gradient-to-r from-violet-500 to-cyan-500" />
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500" />
                   <span className="text-sm text-muted-foreground">{item}</span>
                 </motion.li>
               ))}

@@ -74,7 +74,7 @@ export function Projects() {
                     <div className="mt-4 grid grid-cols-2 gap-2">
                       {project.metrics.slice(0, 2).map((m) => (
                         <div key={m.label} className="rounded-lg bg-white/5 p-2 text-center">
-                          <p className="text-lg font-bold text-violet-300">{m.value}</p>
+                          <p className="text-lg font-bold text-emerald-300">{m.value}</p>
                           <p className="text-xs text-muted-foreground">{m.label}</p>
                         </div>
                       ))}
@@ -143,7 +143,7 @@ export function Projects() {
               )}
 
               <div className="p-8">
-                <span className="text-sm text-violet-400">{selected.category}</span>
+                <span className="text-sm text-emerald-400">{selected.category}</span>
                 <h2 className="mt-2 text-3xl font-bold">{selected.title}</h2>
                 <p className="mt-2 text-muted-foreground">{selected.subtitle}</p>
 
@@ -158,7 +158,7 @@ export function Projects() {
 
                 <div className="mt-8 space-y-4">
                   <div>
-                    <h4 className="font-semibold text-violet-300">Problem</h4>
+                    <h4 className="font-semibold text-emerald-300">Problem</h4>
                     <p className="mt-1 text-sm text-muted-foreground">{selected.problem}</p>
                   </div>
                   <div>

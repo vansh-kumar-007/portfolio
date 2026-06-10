@@ -34,7 +34,7 @@ body {
 }
 
 ::selection {
-  background: rgba(139, 92, 246, 0.3);
+  background: rgba(52, 211, 153, 0.3);
 }
 
 @keyframes shimmer {
@@ -60,7 +60,7 @@ body {
 .aurora-blob-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.4), transparent 70%);
   top: -200px;
   left: -100px;
   animation: aurora-drift 20s ease-in-out infinite;

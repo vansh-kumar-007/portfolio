@@ -1,7 +1,7 @@
 export type SkillCategory = {
   name: string;
   icon: string;
-  skills: { name: string; level: number }[];
+  skills: { name: string; level: string }[];
 };
 
 export const skillCategories: SkillCategory[] = [
@@ -9,90 +9,90 @@ export const skillCategories: SkillCategory[] = [
     name: "Machine Learning",
     icon: "brain",
     skills: [
-      { name: "Scikit-Learn", level: 90 },
-      { name: "XGBoost", level: 85 },
-      { name: "Feature Engineering", level: 88 },
-      { name: "ML Pipelines", level: 87 },
+      { name: "Scikit-Learn", level: "Expert" },
+      { name: "XGBoost", level: "Master" },
+      { name: "Feature Engineering", level: "Master" },
+      { name: "ML Pipelines", level: "Master" },
     ],
   },
   {
     name: "Deep Learning",
     icon: "network",
     skills: [
-      { name: "PyTorch", level: 88 },
-      { name: "TensorFlow", level: 75 },
-      { name: "FaceNet", level: 85 },
-      { name: "Computer Vision", level: 82 },
+      { name: "PyTorch", level: "Master" },
+      { name: "TensorFlow", level: "Advanced" },
+      { name: "FaceNet", level: "Master" },
+      { name: "Computer Vision", level: "Professional" },
     ],
   },
   {
     name: "Reinforcement Learning",
     icon: "gamepad",
     skills: [
-      { name: "Q-Learning", level: 85 },
-      { name: "Deep Q-Networks", level: 88 },
-      { name: "Multi-Agent RL", level: 82 },
-      { name: "Gym Environments", level: 78 },
+      { name: "Q-Learning", level: "Master" },
+      { name: "Deep Q-Networks", level: "Master" },
+      { name: "Multi-Agent RL", level: "Professional" },
+      { name: "Gym Environments", level: "Advanced" },
     ],
   },
   {
     name: "Data Science",
     icon: "chart",
     skills: [
-      { name: "Pandas", level: 92 },
-      { name: "NumPy", level: 90 },
-      { name: "Data Analysis", level: 90 },
-      { name: "Matplotlib", level: 85 },
+      { name: "Pandas", level: "Expert" },
+      { name: "NumPy", level: "Expert" },
+      { name: "Data Analysis", level: "Expert" },
+      { name: "Matplotlib", level: "Master" },
     ],
   },
   {
     name: "Backend",
     icon: "server",
     skills: [
-      { name: "FastAPI", level: 90 },
-      { name: "Python", level: 92 },
-      { name: "REST APIs", level: 88 },
-      { name: "Uvicorn", level: 85 },
+      { name: "FastAPI", level: "Expert" },
+      { name: "Python", level: "Expert" },
+      { name: "REST APIs", level: "Master" },
+      { name: "Uvicorn", level: "Master" },
     ],
   },
   {
     name: "Frontend",
     icon: "layout",
     skills: [
-      { name: "React", level: 85 },
-      { name: "Next.js", level: 88 },
-      { name: "TypeScript", level: 85 },
-      { name: "Streamlit", level: 90 },
+      { name: "React", level: "Master" },
+      { name: "Next.js", level: "Master" },
+      { name: "TypeScript", level: "Master" },
+      { name: "Streamlit", level: "Expert" },
     ],
   },
   {
     name: "Databases",
     icon: "database",
     skills: [
-      { name: "SQL", level: 82 },
-      { name: "PostgreSQL", level: 75 },
-      { name: "Vector DBs", level: 78 },
-      { name: "Qdrant", level: 72 },
+      { name: "SQL", level: "Professional" },
+      { name: "PostgreSQL", level: "Advanced" },
+      { name: "Vector DBs", level: "Advanced" },
+      { name: "Qdrant", level: "Intermediate" },
     ],
   },
   {
     name: "MLOps",
     icon: "cloud",
     skills: [
-      { name: "Git/GitHub", level: 90 },
-      { name: "Render Deploy", level: 85 },
-      { name: "Vercel", level: 88 },
-      { name: "Docker", level: 70 },
+      { name: "Git/GitHub", level: "Expert" },
+      { name: "Render Deploy", level: "Master" },
+      { name: "Vercel", level: "Master" },
+      { name: "Docker", level: "Intermediate" },
     ],
   },
   {
     name: "Tools",
     icon: "wrench",
     skills: [
-      { name: "Jupyter", level: 92 },
-      { name: "Linux", level: 80 },
-      { name: "LangChain", level: 78 },
-      { name: "NLTK", level: 85 },
+      { name: "Jupyter", level: "Expert" },
+      { name: "Linux", level: "Professional" },
+      { name: "LangChain", level: "Advanced" },
+      { name: "NLTK", level: "Master" },
     ],
   },
 ];

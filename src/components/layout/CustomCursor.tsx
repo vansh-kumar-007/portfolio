@@ -38,11 +38,11 @@ export function CustomCursor() {
   return (
     <>
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9999] hidden h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-400/50 mix-blend-difference md:block"
+        className="pointer-events-none fixed top-0 left-0 z-[9999] hidden h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-400/50 mix-blend-difference md:block"
         style={{ x: springX, y: springY, scale: clicking ? 0.8 : 1 }}
       />
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9998] hidden h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-400 md:block"
+        className="pointer-events-none fixed top-0 left-0 z-[9998] hidden h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-400 md:block"
         style={{ x: springX, y: springY }}
       />
     </>

@@ -55,7 +55,7 @@ export function Particles() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(139, 92, 246, ${p.opacity})`;
+        ctx.fillStyle = `rgba(52, 211, 153, ${p.opacity})`;
         ctx.fill();
 
         particlesRef.current.slice(i + 1).forEach((p2) => {
@@ -64,7 +64,7 @@ export function Particles() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(139, 92, 246, ${0.08 * (1 - d / 120)})`;
+            ctx.strokeStyle = `rgba(52, 211, 153, ${0.08 * (1 - d / 120)})`;
             ctx.stroke();
           }
         });

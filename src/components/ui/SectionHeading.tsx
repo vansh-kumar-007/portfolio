@@ -20,7 +20,7 @@ export function SectionHeading({ label, title, description, className }: Section
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
     >
-      <span className="mb-4 inline-block rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1 text-xs font-medium uppercase tracking-widest text-violet-300">
+      <span className="mb-4 inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1 text-xs font-medium uppercase tracking-widest text-emerald-300">
         {label}
       </span>
       <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
