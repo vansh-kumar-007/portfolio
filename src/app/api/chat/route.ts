@@ -52,11 +52,19 @@ export async function POST(req: Request) {
       systemInstruction: systemInstruction 
     });
 
+    let formattedHistory = history.map((msg: any) => ({
+      role: msg.role === "assistant" ? "model" : "user",
+      parts: [{ text: msg.content }],
+    }));
+
+    // Gemini strictly requires the first message in history to be from the user.
+    // Our frontend starts with an assistant greeting, so we must remove it from the history context.
+    if (formattedHistory.length > 0 && formattedHistory[0].role === "model") {
+      formattedHistory.shift();
+    }
+
     const chatSession = model.startChat({
-      history: history.map((msg: any) => ({
-        role: msg.role === "assistant" ? "model" : "user",
-        parts: [{ text: msg.content }],
-      })),
+      history: formattedHistory,
     });
 
     const result = await chatSession.sendMessage(message);
