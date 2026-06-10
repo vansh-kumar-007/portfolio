@@ -10,6 +10,7 @@ import { PortfolioAssistant } from "@/components/chat/PortfolioAssistant";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
+import { LiveHealth } from "@/components/sections/LiveHealth";
 import { Projects } from "@/components/sections/Projects";
 import { AILab } from "@/components/sections/AILab";
 import { Timeline } from "@/components/sections/Timeline";
@@ -30,6 +31,7 @@ export function PortfolioPage() {
         <About />
         <Stats />
         <Skills />
+        <LiveHealth />
         <Projects />
         <AILab />
         <Timeline />
