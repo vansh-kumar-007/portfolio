@@ -2,8 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Bot } from "lucide-react";
-import { getChatResponse, getInitialMessages } from "@/lib/chatbot";
+import { MessageCircle, X, Send, Bot, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type Message = { role: "user" | "assistant"; content: string };
@@ -17,20 +16,49 @@ const suggestions = [
 
 export function PortfolioAssistant() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>(getInitialMessages);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      role: "assistant",
+      content: "Hi! I'm Vansh's AI assistant. Ask me anything about his projects, skills, or background.",
+    }
+  ]);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, isLoading]);
 
-  const send = (text: string) => {
-    if (!text.trim()) return;
+  const send = async (text: string) => {
+    if (!text.trim() || isLoading) return;
+    
     const userMsg: Message = { role: "user", content: text };
-    const assistantMsg: Message = { role: "assistant", content: getChatResponse(text) };
-    setMessages((m) => [...m, userMsg, assistantMsg]);
+    const currentHistory = [...messages];
+    
+    setMessages((m) => [...m, userMsg]);
     setInput("");
+    setIsLoading(true);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ history: currentHistory, message: text }),
+      });
+      
+      const data = await res.json();
+      
+      if (res.ok && data.text) {
+        setMessages((m) => [...m, { role: "assistant", content: data.text }]);
+      } else {
+        setMessages((m) => [...m, { role: "assistant", content: "Sorry, I ran into an issue connecting to the AI." }]);
+      }
+    } catch (err) {
+      setMessages((m) => [...m, { role: "assistant", content: "An error occurred while reaching my brain." }]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -77,22 +105,29 @@ export function PortfolioAssistant() {
                     "max-w-[85%] rounded-2xl px-4 py-2.5 text-sm",
                     msg.role === "user"
                       ? "ml-auto bg-violet-600 text-white"
-                      : "bg-white/5 text-muted-foreground whitespace-pre-line",
+                      : "bg-white/5 text-muted-foreground whitespace-pre-wrap",
                   )}
                 >
                   {msg.content}
                 </div>
               ))}
+              
+              {isLoading && (
+                <div className="max-w-[85%] rounded-2xl bg-white/5 px-4 py-2.5 text-sm text-muted-foreground flex items-center gap-2">
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Thinking...
+                </div>
+              )}
               <div ref={bottomRef} />
             </div>
 
-            {messages.length <= 1 && (
+            {messages.length <= 1 && !isLoading && (
               <div className="flex flex-wrap gap-2 px-4 pb-2">
                 {suggestions.map((s) => (
                   <button
                     key={s}
                     onClick={() => send(s)}
-                    className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted-foreground hover:border-violet-500/30 hover:text-foreground"
+                    className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted-foreground hover:border-violet-500/30 hover:text-foreground text-left"
                   >
                     {s}
                   </button>
@@ -110,12 +145,14 @@ export function PortfolioAssistant() {
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
+                disabled={isLoading}
                 placeholder="Ask anything..."
-                className="flex-1 rounded-xl bg-white/5 px-4 py-2 text-sm outline-none focus:ring-1 focus:ring-violet-500/50"
+                className="flex-1 rounded-xl bg-white/5 px-4 py-2 text-sm outline-none focus:ring-1 focus:ring-violet-500/50 disabled:opacity-50"
               />
               <button
                 type="submit"
-                className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-600 text-white"
+                disabled={isLoading || !input.trim()}
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-600 text-white disabled:opacity-50 transition-opacity"
                 aria-label="Send message"
               >
                 <Send className="h-4 w-4" />
