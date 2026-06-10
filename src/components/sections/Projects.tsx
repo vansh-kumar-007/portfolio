@@ -183,6 +183,30 @@ export function Projects() {
                   </div>
                 </div>
 
+                {selected.id === "cyber-arena" && (
+                  <div className="mt-8 overflow-hidden rounded-xl border border-violet-500/30 shadow-[0_0_15px_rgba(139,92,246,0.15)]">
+                    <div className="flex items-center justify-between border-b border-white/10 bg-black/40 px-4 py-3 backdrop-blur-md">
+                      <span className="text-sm font-semibold text-violet-300 flex items-center gap-2">
+                        <span className="relative flex h-2 w-2">
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                        </span>
+                        Live Interactive Demo
+                      </span>
+                      <div className="flex gap-1.5">
+                        <span className="h-3 w-3 rounded-full bg-red-500/80" />
+                        <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
+                        <span className="h-3 w-3 rounded-full bg-green-500/80" />
+                      </div>
+                    </div>
+                    <iframe 
+                      src="https://cyber-arena-delta.vercel.app/" 
+                      className="w-full h-[500px] bg-black" 
+                      title="CyberArena Interactive Demo"
+                    />
+                  </div>
+                )}
+
                 <div className="mt-6 flex flex-wrap gap-2">
                   {selected.techStack.map((t) => (
                     <span key={t} className="rounded-full border border-white/10 px-3 py-1 text-xs">
